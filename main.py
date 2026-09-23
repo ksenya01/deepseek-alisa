@@ -26,7 +26,7 @@ async def main(request: Request):
             "model": "deepseek-flash",
             "messages": [{"role": "user", "content": user_text}],
             "thinking": {"type": "disabled"},
-            "max_tokens": 300,
+            "max_tokens": 150,
         },
         timeout=4,
     )
