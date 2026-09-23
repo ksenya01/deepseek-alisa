@@ -16,7 +16,7 @@ async def main(request: Request):
         DEEPSEEK_API_URL,
         headers={"Authorization": f"Bearer {DEEPSEEK_API_KEY}"},
         json={
-            "model": "deepseek-v4.1-flash",
+            "model": "deepseek-flash",
             "messages": [{"role": "user", "content": user_text}],
         }
     )
