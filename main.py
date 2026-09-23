@@ -18,7 +18,9 @@ async def main(request: Request):
         json={
             "model": "deepseek-flash",
             "messages": [{"role": "user", "content": user_text}],
+            "max_tokens": 300,
         }
+    )
     )
     data = response.json()
     if "choices" in data and len(data["choices"]) > 0:
