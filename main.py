@@ -3,6 +3,9 @@ from fastapi import FastAPI, Request
 import requests
 
 app = FastAPI()
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
 
 DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions"
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
