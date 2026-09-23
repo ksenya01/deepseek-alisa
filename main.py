@@ -21,7 +21,6 @@ async def main(request: Request):
             "max_tokens": 300,
         }
     )
-    )
     data = response.json()
     if "choices" in data and len(data["choices"]) > 0:
         answer = data["choices"][0].get("message", {}).get("content", "Пустой ответ")
