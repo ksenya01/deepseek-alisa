@@ -20,11 +20,11 @@ async def main(request: Request):
             "messages": [{"role": "user", "content": user_text}],
         }
     )
-            data = response.json()
-        if "choices" in data and len(data["choices"]) > 0:
-            answer = data["choices"][0].get("message", {}).get("content", "Пустой ответ")
-        else:
-            answer = f"Ошибка DeepSeek: {data}"
+    data = response.json()
+    if "choices" in data and len(data["choices"]) > 0:
+        answer = data["choices"][0].get("message", {}).get("content", "Пустой ответ")
+    else:
+        answer = f"Ошибка DeepSeek: {data}"
 
     return {
         "version": body["version"],
