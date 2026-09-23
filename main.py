@@ -18,7 +18,7 @@ async def main(request: Request):
         json={
             "model": "deepseek-flash",
             "messages": [{"role": "user", "content": user_text}],
-            "max_tokens": 300,
+            "max_tokens": 150,
         }
     )
     data = response.json()
