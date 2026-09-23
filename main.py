@@ -10,7 +10,6 @@ async def health():
 DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions"
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 
-
 @app.post("/")
 async def main(request: Request):
     body = await request.json()
