@@ -68,5 +68,3 @@ async def main(request: Request):
         },
         "session_state": {}
     }
-        }
-    }
