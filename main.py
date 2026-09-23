@@ -16,11 +16,15 @@ async def main(request: Request):
         DEEPSEEK_API_URL,
         headers={"Authorization": f"Bearer {DEEPSEEK_API_KEY}"},
         json={
-            "model": "deepseek-chat",
+            "model": "deepseek-v4.1-flash",
             "messages": [{"role": "user", "content": user_text}],
         }
     )
-    answer = response.json()["choices"][0]["message"]["content"]
+            data = response.json()
+        if "choices" in data and len(data["choices"]) > 0:
+            answer = data["choices"][0].get("message", {}).get("content", "Пустой ответ")
+        else:
+            answer = f"Ошибка DeepSeek: {data}"
 
     return {
         "version": body["version"],
